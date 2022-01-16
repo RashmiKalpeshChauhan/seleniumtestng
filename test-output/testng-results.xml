@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2022-01-16T17:32:47 GST" name="Default suite" finished-at="2022-01-16T17:33:00 GST" duration-ms="13578">
+    <groups>
+    </groups>
+    <test started-at="2022-01-16T17:32:47 GST" name="Default test" finished-at="2022-01-16T17:33:00 GST" duration-ms="13578">
+      <class name="main.java.tests.LauncherTests">
+        <test-method is-config="true" signature="intiateDriver()[pri:0, instance:main.java.tests.LauncherTests@6e0f5f7f]" started-at="2022-01-16T17:32:47 GST" name="intiateDriver" finished-at="2022-01-16T17:32:54 GST" duration-ms="7344" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- intiateDriver -->
+        <test-method is-config="true" signature="login()[pri:0, instance:main.java.tests.LauncherTests@6e0f5f7f]" started-at="2022-01-16T17:32:54 GST" name="login" finished-at="2022-01-16T17:32:55 GST" duration-ms="458" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- login -->
+        <test-method signature="GenerateLauncher()[pri:0, instance:main.java.tests.LauncherTests@6e0f5f7f]" started-at="2022-01-16T17:32:55 GST" name="GenerateLauncher" finished-at="2022-01-16T17:33:00 GST" duration-ms="5571" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- GenerateLauncher -->
+        <test-method is-config="true" signature="afterTest()[pri:0, instance:main.java.tests.LauncherTests@6e0f5f7f]" started-at="2022-01-16T17:33:00 GST" name="afterTest" finished-at="2022-01-16T17:33:00 GST" duration-ms="174" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterTest -->
+      </class> <!-- main.java.tests.LauncherTests -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>
