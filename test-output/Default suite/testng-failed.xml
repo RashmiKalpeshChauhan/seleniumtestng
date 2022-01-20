@@ -5,7 +5,9 @@
     <classes>
       <class name="main.java.tests.Grunt">
         <methods>
-          <include name="main"/>
+          <include name="intiateDriver"/>
+          <include name="gruntConCheck"/>
+          <include name="afterTest"/>
         </methods>
       </class> <!-- main.java.tests.Grunt -->
     </classes>

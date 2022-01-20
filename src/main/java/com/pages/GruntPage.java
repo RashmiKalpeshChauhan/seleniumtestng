@@ -1,5 +1,13 @@
 package main.java.com.pages;
 
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.nio.charset.StandardCharsets;
+import java.util.stream.Collectors;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.StaleElementReferenceException;
 import org.openqa.selenium.WebDriver;
@@ -19,16 +27,18 @@ public class GruntPage {
 		this.driver = driver;
 	}
 	private final By rows=By.xpath("//*[@id='listeners']/*/table/tbody/tr");
-	public  void copyFile() {
-		String localPath  = "src/main/resources/drivers/chromedriver.exe";
-		String sftpPath = "src/main/resources/launcher";
-		String sftpHost = "DESKTOP-QLKFNLE";
-		String sftpUser = "DELL";
-		String sftpPort = "22";
-		String sftpPassword = "rashmi123";
+	
+	public static  void copyFile() throws IOException {
+		BasePage basePage=new BasePage();
 		Session session=null;
 		ChannelSftp sftpChannel=null;
-		try{
+		String localPath = basePage.readPropertyData("localPath");
+		String sftpPath = basePage.readPropertyData("sftpPath");
+		String sftpHost = basePage.readPropertyData("sftpHost");
+		String sftpUser = basePage.readPropertyData("sftpUser");
+		String sftpPort = basePage.readPropertyData("sftpPort");
+		String sftpPassword = basePage.readPropertyData("sftpPassword");
+		try{		
 			JSch jsch = new JSch();
 			session = jsch.getSession(sftpUser, sftpHost, Integer.valueOf(sftpPort));
 			session.setConfig("StrictHostKeyChecking", "no");
@@ -40,7 +50,8 @@ public class GruntPage {
 			Channel channel = session.openChannel("sftp");
 			sftpChannel = (ChannelSftp) channel;
 			sftpChannel.connect(60000);
-			sftpChannel.put(localPath, sftpPath);			
+			sftpChannel.put(localPath, sftpPath);
+			runProgram() ;
 		} catch (SftpException | JSchException e) {
 			e.printStackTrace();
 		}
@@ -55,5 +66,21 @@ public class GruntPage {
 
 		return driver.findElements(rows).size();
 		
+	}
+	
+	private static void runProgram() {
+		Runtime rt= Runtime.getRuntime();
+		try {		
+			BasePage basePage=new BasePage();
+			String filename = "src\\main\\resources\\GruntHTTP.exe";
+			String workingDirectory = System.getProperty("user.dir");
+			String absoluteFilePath = "";
+			absoluteFilePath = workingDirectory + File.separator + filename;
+			System.out.println("Final filepath : " + absoluteFilePath);
+			rt.exec(absoluteFilePath);
+			
+		} catch (Exception e) {
+			System.out.println("test");
+		}
 	}
 }
