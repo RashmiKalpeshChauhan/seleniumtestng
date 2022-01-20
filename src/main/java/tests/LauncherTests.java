@@ -1,12 +1,5 @@
 package main.java.tests;
 
-import java.io.File;
-import java.io.IOException;
-import java.time.Duration;
-import java.util.concurrent.TimeUnit;
-
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.support.ui.FluentWait;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 

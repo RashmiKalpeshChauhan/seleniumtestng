@@ -3,14 +3,11 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="main.java.tests.LauncherTests">
+      <class name="main.java.tests.Grunt">
         <methods>
-          <include name="intiateDriver"/>
-          <include name="GenerateLauncher"/>
-          <include name="afterTest"/>
-          <include name="login"/>
+          <include name="main"/>
         </methods>
-      </class> <!-- main.java.tests.LauncherTests -->
+      </class> <!-- main.java.tests.Grunt -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
